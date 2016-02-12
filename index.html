@@ -48,6 +48,7 @@
 	    	$('h3.city').text('City: ' + result.name);
         $('h4.country').text(result['sys'].country);
         $('h4.temprature').text(result['main'].temp + ' Celcius');
+        $('#add-action').modal('show');
 	    }
 		});
 	})();
