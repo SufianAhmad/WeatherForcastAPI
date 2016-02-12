@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>Weather Forcast</title>
-	
+
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Open+Sans">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
@@ -45,7 +45,9 @@
 			$.ajax({
 	    url:"http://api.openweathermap.org/data/2.5/weather?zip="+bla+",PK&APPID=<API_KEY>",
 	    success: function(result){
-	    	console.log(result);
+	    	$('h3.city').text('City: ' + result.name);
+        $('h4.country').text(result['sys'].country);
+        $('h4.temprature').text(result['main'].temp + ' Celcius');
 	    }
 		});
 	})();
