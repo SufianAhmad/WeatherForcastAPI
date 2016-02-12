@@ -34,16 +34,17 @@
     <label for="search"><span>Weather forcast </span></label>
     <input id="search" type="search" value="" placeholder="Search by Zip/Address"/>
   </form>
-  <button id="search">Check weather</button>
+  <button class="search">Check weather</button>
 
 <script src="jquery.js"></script>
 <script src="js/bootstrap.js"></script>
 <script>
 	(function () {
-		$('#button').on('click', function(){
+		$('button.search').on('click', function(){
+			console.log('clicked');
 			var bla = $('#search').val();
 			$.ajax({
-	    url:"http://api.openweathermap.org/data/2.5/weather?zip="+bla+",PK&APPID=<API_KEY>",
+	    url:"http://api.openweathermap.org/data/2.5/weather?zip="+bla+",PK&APPID=bb1804c0a316a1fbfb1c52231879c19d",
 	    success: function(result){
 	    	$('h3.city').text('City: ' + result.name);
         $('h4.country').text(result['sys'].country);
@@ -51,6 +52,7 @@
         $('#add-action').modal('show');
 	    }
 		});
+		});	
 	})();
 </script>
 </body>
