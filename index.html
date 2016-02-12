@@ -4,24 +4,31 @@
 	<title>Weather Forcast</title>
 </head>
 <body>
-	 <form id="searcher">
+<!-- Design Dialog Model -->
+<div id="add-action" class="modal fade">
+	<div class="vertical-alignment-helper">
+		
+	</div>
+</div>
+	<form id="searcher">
     <label for="search"><span>Weather forcast </span></label>
     <input id="search" type="search" value="" placeholder="Search by Zip/Address"/>
   </form>
   <button id="search">Check weather</button>
 
-  <script src="jquery.js"></script>
-  <script>
-  	(function () {
-  		$('#button').on('click', function(){
-  			var bla = $('#search').val();
-  			$.ajax({
-        url:"http://api.openweathermap.org/data/2.5/weather?zip="+bla+",PK&APPID=<API_KEY>",
-        success: function(result){
-        	console.log(result);
-        }
-  		});
-  	})();
-  </script>
+<script src="jquery.js"></script>
+<script src="js/bootstrap.js"></script>
+<script>
+	(function () {
+		$('#button').on('click', function(){
+			var bla = $('#search').val();
+			$.ajax({
+	    url:"http://api.openweathermap.org/data/2.5/weather?zip="+bla+",PK&APPID=<API_KEY>",
+	    success: function(result){
+	    	console.log(result);
+	    }
+		});
+	})();
+</script>
 </body>
 </html>
