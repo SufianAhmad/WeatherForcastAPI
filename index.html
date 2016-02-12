@@ -15,7 +15,10 @@
   	(function () {
   		$('#button').on('click', function(){
   			$.ajax({
-        url:"http://api.openweathermap.org/data/2.5/weather?zip=<ZIP_CODE>,PK&APPID=<API_KEY>"
+        url:"http://api.openweathermap.org/data/2.5/weather?zip=<ZIP_CODE>,PK&APPID=<API_KEY>",
+        success: function(result){
+        	console.log(result);
+        }
   		});
   	})();
   </script>
